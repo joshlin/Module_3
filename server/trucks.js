@@ -260,7 +260,9 @@ var filterByDay = function filterByDay(day) {
 
 	var todayFoodTrucks = _.filter(foodTrucks, function(truck){
 		for (var i = 0; i < truck.schedule.length; i++){
-			return day === truck.schedule[i];
+			if (day === truck.schedule[i]){
+				return true;
+			}
 		}
 	});
 	return todayFoodTrucks;
